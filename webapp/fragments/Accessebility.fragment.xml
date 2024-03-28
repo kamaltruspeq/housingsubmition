@@ -1,0 +1,123 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Table>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Label text="Spouse and Child Details"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column hAlign="Center">
+				<Text text="No"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Full Name"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Gender"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Dependent Subtype"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Date of Birth"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="IC/Birth Certifi/Passport"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Personnal No"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Action"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<Text text="1"/>
+				<Text text="AYU BINTI BAKAR"/>
+				<Text text="Female"/>
+				<Text text="Spouse"/>
+				<Text text="15 June 1961"/>
+				<Text text="00156899"/>
+				<Link text="10033050"/>
+				<Button text="Delete" type="Emphasized"/>
+			</ColumnListItem>
+			<ColumnListItem>
+				<Text text="2"/>
+				<Text text="HAFIZAH BINTI ZULKIFI"/>
+				<Text text="Female"/>
+				<Text text="Child"/>
+				<Text text="09 June 2002"/>
+				<Text text="01075468"/>
+				<Link text=""/>
+				<Button text="Delete" type="Emphasized"/>
+			</ColumnListItem>
+			<ColumnListItem>
+				<Text text="3"/>
+				<Text text="AMINOR BIN ZULKIFI"/>
+				<Text text="Male"/>
+				<Text text="Child"/>
+				<Text text="28 April 2000"/>
+				<Text text="01056859"/>
+				<Link text=""/>
+				<Button text="Delete" type="Emphasized"/>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Label text="Other Dependents Details"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column hAlign="Center">
+				<Text text="No"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Dependents Full Name"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Gender"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Date of Birth"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Relationship"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Input value="1" textAlign="Center"/>
+					<Input value="HJ ABAS HJ ALI" textAlign="Center"/>
+					<ComboBox>
+						<core:Item key="{key}" text="Male"/>
+						<core:Item key="{key}" text="Female"/>
+					</ComboBox>
+					<DatePicker/>
+					<Input value="Father" textAlign="Center"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<Input value="2" textAlign="Center"/>
+					<Input value="SITI MAIMUNAH HASSAN" textAlign="Center"/>
+					<ComboBox>
+						<core:Item key="{key}" text="Male"/>
+						<core:Item key="{key}" text="Female"/>
+					</ComboBox>
+					<DatePicker/>
+					<Input value="Mother" textAlign="Center"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Label text="Additional information"/>
+	<TextArea rows="4" width="100%"/>
+	<Text
+		text="Remarks: Please state is family member or dependent has a verified physical or mental handicap. or other issue, along with a letter of confirmation from the Ministry of Health and Ministry of Youth and Sport"/>
+</core:FragmentDefinition>

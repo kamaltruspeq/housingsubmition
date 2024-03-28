@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<!--<Panel expandable="true" headerText="I. Employee Details" width="auto" class="sapUiResponsiveMargin">-->
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="5" labelSpanS="12" emptySpanXL="2"
+			emptySpanL="2" emptySpanM="2" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+			<f:content>
+				<core:Title/>
+				<Label text="Personal Number"/>
+				<Text text="10033002"/>
+				<Label text="Name"/>
+				<Text text="ZULKIFLI BIN HU ABAS"/>
+				<Label text="Martial Status"/>
+				<Text text="kahwin"/>
+				<core:Title/>
+				<Label text="Date of Birth"/>
+				<Text text="21 February 1978"/>
+				<Label text="Identification Number"/>
+				<Text text="00124474"/>
+				<Label text="IC Color"/>
+				<Text text="Kuning"/>
+			</f:content>
+		</f:SimpleForm>
+	<!--</Panel>-->
+</core:FragmentDefinition>

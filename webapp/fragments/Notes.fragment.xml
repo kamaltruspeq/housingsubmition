@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<f:SimpleForm title="Notes"></f:SimpleForm>
+	<TextArea rows="2" width="100%"/>
+	<f:SimpleForm title="Declaration">
+		<l:HorizontalLayout >
+			<CheckBox/>
+			<TextArea
+				value="Segala butir-butir keterangan yang saya turunkan dalam borang ini adalah benar. Jika saya didapati memberikan butir-butir ketarangan yang palsu. mengelirukan atau tidak tepat, saya mengaku bahawa saya boleh dikenakan tindakan undang-undang (termasuk pendakwaan jenayah) dan jika berkenaan. saya juga boleh dikenakan tindakan tatatertib dibawah mana-mana peraturan-peraturan yang berkaitan dengan kelakuan dan tatatertib pegawai-pegawai Kerajaan."
+				growing="true" width="749%"/>
+		</l:HorizontalLayout>
+	</f:SimpleForm>
+	<HBox justifyContent="End">
+		<Button text="Submit" type="Accept" class="sapUiTinyMarginEnd"/>
+		<Button text="Save as Draft" type="Emphasized" class="sapUiTinyMarginEnd"/>
+		<Button text="Cancel" type="Reject" class="sapUiTinyMarginEnd"/>
+	</HBox>
+</core:FragmentDefinition>

@@ -1,0 +1,90 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Table>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Label text="Address"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column class="sapUiTinyMarginBeginEnd" hAlign="Center">
+				<Text text="Address Type"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="{i18n>Hno}"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="2nd Address Line"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Postal Code"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="District"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="City"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Govt Housing"/>
+			</Column>
+			<Column hAlign="Center">
+				<Text text="Distance in KM"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="Home Address"/>
+					<Text text="No 3. Spg 111"/>
+					<Text text="Jin Muara"/>
+					<Text text="BC3915"/>
+					<Text text="Brunei Muara"/>
+					<Text text="Bendar Seri Begawan"/>
+					<Text text="No"/>
+					<Text text="23"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<Text text="Permanent Address"/>
+					<Text text="No 7. Spg 12-15"/>
+					<Text text="Jin Tungku Link"/>
+					<Text text="BC2922"/>
+					<Text text="Brunei Muara"/>
+					<Text text="Bendar Seri Begawan"/>
+					<Text text="No"/>
+					<Text text="13"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table width="40rem">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Label text="Communication"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column class="sapUiTinyMarginBeginEnd">
+				<Text text="Communication Type"/>
+			</Column>
+			<Column>
+				<Text text="Details"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="Office Email"/>
+					<Text text="ZULKIFLI.ABAS@BOMBA.GOV.BN"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<Text text="Home Number"/>
+					<Text text="2332266"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

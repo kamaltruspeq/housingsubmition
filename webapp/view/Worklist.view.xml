@@ -1,0 +1,119 @@
+
+<mvc:View controllerName="com.Brunei.zhousingappsubmission.controller.Worklist" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<IconTabBar >
+						<items>
+							<IconTabFilter icon="sap-icon://hint" key="info">
+								<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+									<headerToolbar>
+										<Toolbar>
+											<Text text="I. Employee Details"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<VBox>
+											<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Employeedetails" type="XML"/>
+										</VBox>
+									</content>
+								</Panel>
+								<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+									<headerToolbar>
+										<Toolbar>
+											<Text text="II. Content Details"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<VBox>
+											<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Contentdetails" type="XML"/>
+										</VBox>
+									</content>
+								</Panel>
+								<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+									<headerToolbar>
+										<Toolbar>
+											<Text text="III. Employment Details"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<VBox>
+											<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Employmentdetails" type="XML"/>
+										</VBox>
+									</content>
+								</Panel>
+								<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+									<headerToolbar>
+										<Toolbar>
+											<Text text="IV. Application Details"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<VBox>
+											<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Applicationdetails" type="XML"/>
+										</VBox>
+									</content>
+								</Panel>
+								<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+									<headerToolbar>
+										<Toolbar>
+											<Text text="V. Housing Facilities Information"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<VBox>
+											<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Housingfacilitiesinformation" type="XML"/>
+										</VBox>
+									</content>
+								</Panel>
+								<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+									<headerToolbar>
+										<Toolbar>
+											<Text text="VI. Current Address Details"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<VBox>
+											<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Currentaddressdetails" type="XML"/>
+										</VBox>
+									</content>
+								</Panel>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://accessibility" key="Accessibility">
+								<content>
+									<VBox>
+										<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Accessebility" type="XML"/>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://attachment">
+								<content>
+									<VBox>
+										<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Attachment" type="XML"/>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://notes">
+								<content>
+									<VBox>
+										<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Notes" type="XML"/>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://in-progress"></IconTabFilter>
+							<IconTabFilter icon="sap-icon://print">
+								<content>
+									<VBox>
+										<core:Fragment fragmentName="com.Brunei.zhousingappsubmission.fragments.Print" type="XML"/>
+									</VBox>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,255 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="ZSSM_IC_TYPE" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ictypeid"/>
+                </Key>
+                <Property Name="Ictypeid" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="IC Type ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ictypetext" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="IC Type Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZSSM_SBPP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Sbppid"/>
+                </Key>
+                <Property Name="Sbppid" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="SBPP ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sbpptext" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="SBPPText" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMPLOYEE_DETAILSType" sap:label="Employee personal details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:text="EmployeeName" sap:label="Personnel number"/>
+                <Property Name="EmployeeName" Type="Edm.String" MaxLength="40" sap:label="Employee/app.name" sap:quickinfo="Formatted Name of Employee or Applicant"/>
+                <Property Name="Gender" Type="Edm.String" MaxLength="1" sap:label="Gender"/>
+                <Property Name="Gendertext" Type="Edm.String" MaxLength="80" sap:label="Gender" sap:quickinfo="Texts for Gender"/>
+                <Property Name="DateOfBirth" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="MaritalStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Marital status" sap:quickinfo="Marital Status Key"/>
+                <Property Name="MaritalStatusText" Type="Edm.String" MaxLength="6" sap:label="Marital status" sap:quickinfo="Marital Status"/>
+                <Property Name="IdentificationNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Identity Number"/>
+                <Property Name="ICColor" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IC Colour"/>
+                <Property Name="UserID" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="System ID" sap:quickinfo="Communication Identification/Number"/>
+                <NavigationProperty Name="to_AddressDetails" Relationship="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD" FromRole="FromRole_assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD" ToRole="ToRole_assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD"/>
+                <NavigationProperty Name="to_CommunicationDetails" Relationship="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_8EBFBD90D79773F71B9BB5AACF5C4730" FromRole="FromRole_assoc_8EBFBD90D79773F71B9BB5AACF5C4730" ToRole="ToRole_assoc_8EBFBD90D79773F71B9BB5AACF5C4730"/>
+                <NavigationProperty Name="to_EmpChildrenDetails" Relationship="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_91D1F8D1DCADE5AA645FEF3E95D494D1" FromRole="FromRole_assoc_91D1F8D1DCADE5AA645FEF3E95D494D1" ToRole="ToRole_assoc_91D1F8D1DCADE5AA645FEF3E95D494D1"/>
+                <NavigationProperty Name="to_EmploymentDetails" Relationship="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_5E1F6ED959A36B5713BEE9E739FBEF93" FromRole="FromRole_assoc_5E1F6ED959A36B5713BEE9E739FBEF93" ToRole="ToRole_assoc_5E1F6ED959A36B5713BEE9E739FBEF93"/>
+                <NavigationProperty Name="to_EmpSpouseDetails" Relationship="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_4687BABC4A4B4CA3A642122B1DECF6EB" FromRole="FromRole_assoc_4687BABC4A4B4CA3A642122B1DECF6EB" ToRole="ToRole_assoc_4687BABC4A4B4CA3A642122B1DECF6EB"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMPLOYMENT_DETAILSType" sap:label="Employment details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                    <PropertyRef Name="JoiningDate"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="JoiningDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date"/>
+                <Property Name="PersonnelArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Personnel area" sap:quickinfo="Personnel Area"/>
+                <Property Name="PersonnelAreaName" Type="Edm.String" MaxLength="30" sap:label="Personnel Area Text"/>
+                <Property Name="PersonnelSubArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Personnel subarea" sap:quickinfo="Personnel Subarea"/>
+                <Property Name="PersonnelSubAreaName" Type="Edm.String" MaxLength="15" sap:label="Pers. subarea text" sap:quickinfo="Personnel Subarea Text"/>
+                <Property Name="EmployeeGroup" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Employee group" sap:quickinfo="Employee Group"/>
+                <Property Name="EmployeeGroupName" Type="Edm.String" MaxLength="20" sap:label="Name of employee grp" sap:quickinfo="Name of Employee Group"/>
+                <Property Name="EmployeeSubGroup" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Employee subgroup" sap:quickinfo="Employee Subgroup"/>
+                <Property Name="EmployeeSubGroupName" Type="Edm.String" MaxLength="20" sap:label="Name of EE subgroup" sap:quickinfo="Name of Employee Subgroup"/>
+                <Property Name="EmployeePosition" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Position"/>
+                <Property Name="EmployeePositionName" Type="Edm.String" MaxLength="40" sap:label="Object name" sap:quickinfo="Object Name"/>
+                <Property Name="EmployeePayScale" Type="Edm.String" MaxLength="11"/>
+                <Property Name="EstablishedSalaryScale" Type="Edm.String" MaxLength="11" sap:display-format="UpperCase" sap:label="Establish Sal Scale" sap:quickinfo="Establish Salary Scale"/>
+                <Property Name="EmployeeBasicSalary" Type="Edm.Decimal" Precision="14" Scale="3" sap:label="Amount" sap:quickinfo="Wage Type Amount for Payments"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMP_Children_DETAILSType" sap:label="Employee Children details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                    <PropertyRef Name="ChildName"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="ChildName" Type="Edm.String" Nullable="false" MaxLength="81"/>
+                <Property Name="ChildDateOfBirth" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="ChildMaritalStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Marital status" sap:quickinfo="Marital Status Key"/>
+                <Property Name="ChildMaritalStatusText" Type="Edm.String" MaxLength="6" sap:label="Marital status" sap:quickinfo="Marital Status"/>
+                <Property Name="ChildPassportNumber" Type="Edm.String" MaxLength="40" sap:label="Passport Number"/>
+                <Property Name="ChildDOBCertNumber" Type="Edm.String" MaxLength="40" sap:label="Birth Certificate No" sap:quickinfo="Birth Certificate Number"/>
+                <Property Name="IdentificationNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Identity Number"/>
+                <Property Name="ICColor" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IC Colour"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMP_CHILDREN_DETAILSVHType" sap:label="Employee Children details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                    <PropertyRef Name="ChildName"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="ChildName" Type="Edm.String" Nullable="false" MaxLength="81"/>
+                <Property Name="ChildDateOfBirth" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="ChildMaritalStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Marital status" sap:quickinfo="Marital Status Key"/>
+                <Property Name="ChildMaritalStatusText" Type="Edm.String" MaxLength="6" sap:label="Marital status" sap:quickinfo="Marital Status"/>
+                <Property Name="ChildPassportNumber" Type="Edm.String" MaxLength="40" sap:label="Passport Number"/>
+                <Property Name="ChildDOBCertNumber" Type="Edm.String" MaxLength="40" sap:label="Birth Certificate No" sap:quickinfo="Birth Certificate Number"/>
+                <Property Name="IdentificationNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Identity Number"/>
+                <Property Name="ICColor" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IC Colour"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMP_COMM_DETAILSType" sap:label="Employee Communication details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                    <PropertyRef Name="CommunicationType"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="CommunicationType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Subtype"/>
+                <Property Name="CommunicationTypeText" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name of Subtype"/>
+                <Property Name="SystemID" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="System ID" sap:quickinfo="Communication Identification/Number"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMP_CONTACT_DETAILSType" sap:label="Employee Contact details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                    <PropertyRef Name="AddressType"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="AddressType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Address type" sap:quickinfo="Address Record Type"/>
+                <Property Name="AddressTypeText" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name of Subtype"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="60" sap:label="Street and House No." sap:quickinfo="Street and House Number"/>
+                <Property Name="AddressLine2" Type="Edm.String" MaxLength="40" sap:label="2nd address line"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal code / city" sap:quickinfo="Postal Code"/>
+                <Property Name="District" Type="Edm.String" MaxLength="40" sap:label="District"/>
+                <Property Name="City" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="GovtHousing" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="" sap:quickinfo="Government Housing"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMP_MARITAL_STATUSVHType" sap:label="Employee Children details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MaritalStatus"/>
+                </Key>
+                <Property Name="MaritalStatus" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:text="MaritalStatusText" sap:label="Marital status" sap:quickinfo="Marital Status Key"/>
+                <Property Name="MaritalStatusText" Type="Edm.String" MaxLength="6" sap:label="Marital status" sap:quickinfo="Marital Status"/>
+            </EntityType>
+            <EntityType Name="ZSSM_EMP_SPOUSE_DETAILSType" sap:label="Employee Spouse details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                    <PropertyRef Name="SpouseName"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="SpouseName" Type="Edm.String" Nullable="false" MaxLength="81"/>
+                <Property Name="IdentificationNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Identity Number"/>
+                <Property Name="ICColor" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IC Colour"/>
+                <Property Name="SpousePosition" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Position"/>
+                <Property Name="SpousePositionName" Type="Edm.String" MaxLength="40" sap:label="Object name" sap:quickinfo="Object Name"/>
+                <Property Name="SpousePersonnelNumber" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <NavigationProperty Name="to_SpouseDetails" Relationship="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_7CED91AEF89241CF24A40B0214DC3864" FromRole="FromRole_assoc_7CED91AEF89241CF24A40B0214DC3864" ToRole="ToRole_assoc_7CED91AEF89241CF24A40B0214DC3864"/>
+            </EntityType>
+            <EntityType Name="ZSSM_SPOUSE_DETAILSType" sap:label="Spouse details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PersonnelNumber"/>
+                </Key>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:text="EmployeeName" sap:label="Personnel number"/>
+                <Property Name="EmployeeName" Type="Edm.String" MaxLength="40" sap:label="Employee/app.name" sap:quickinfo="Formatted Name of Employee or Applicant"/>
+                <Property Name="IdentificationNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Identity Number"/>
+                <Property Name="ICColor" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IC Colour"/>
+                <Property Name="SpousePosition" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Position"/>
+                <Property Name="SpousePositionName" Type="Edm.String" MaxLength="40" sap:label="Object name" sap:quickinfo="Object Name"/>
+                <Property Name="SpouseEmpSubGroup" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Employee subgroup" sap:quickinfo="Employee Subgroup"/>
+                <Property Name="SpouseEmpSubGrpName" Type="Edm.String" MaxLength="20" sap:label="Name of EE subgroup" sap:quickinfo="Name of Employee Subgroup"/>
+                <Property Name="ServiceEndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+            </EntityType>
+            <Association Name="assoc_7CED91AEF89241CF24A40B0214DC3864" sap:content-version="1">
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_SPOUSE_DETAILSType" Multiplicity="1" Role="FromRole_assoc_7CED91AEF89241CF24A40B0214DC3864"/>
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_SPOUSE_DETAILSType" Multiplicity="0..1" Role="ToRole_assoc_7CED91AEF89241CF24A40B0214DC3864"/>
+            </Association>
+            <Association Name="assoc_8EBFBD90D79773F71B9BB5AACF5C4730" sap:content-version="1">
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYEE_DETAILSType" Multiplicity="1" Role="FromRole_assoc_8EBFBD90D79773F71B9BB5AACF5C4730"/>
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_COMM_DETAILSType" Multiplicity="*" Role="ToRole_assoc_8EBFBD90D79773F71B9BB5AACF5C4730"/>
+            </Association>
+            <Association Name="assoc_91D1F8D1DCADE5AA645FEF3E95D494D1" sap:content-version="1">
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYEE_DETAILSType" Multiplicity="1" Role="FromRole_assoc_91D1F8D1DCADE5AA645FEF3E95D494D1"/>
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_Children_DETAILSType" Multiplicity="*" Role="ToRole_assoc_91D1F8D1DCADE5AA645FEF3E95D494D1"/>
+            </Association>
+            <Association Name="assoc_5E1F6ED959A36B5713BEE9E739FBEF93" sap:content-version="1">
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYEE_DETAILSType" Multiplicity="1" Role="FromRole_assoc_5E1F6ED959A36B5713BEE9E739FBEF93"/>
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYMENT_DETAILSType" Multiplicity="0..1" Role="ToRole_assoc_5E1F6ED959A36B5713BEE9E739FBEF93"/>
+            </Association>
+            <Association Name="assoc_4687BABC4A4B4CA3A642122B1DECF6EB" sap:content-version="1">
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYEE_DETAILSType" Multiplicity="1" Role="FromRole_assoc_4687BABC4A4B4CA3A642122B1DECF6EB"/>
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_SPOUSE_DETAILSType" Multiplicity="*" Role="ToRole_assoc_4687BABC4A4B4CA3A642122B1DECF6EB"/>
+            </Association>
+            <Association Name="assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD" sap:content-version="1">
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYEE_DETAILSType" Multiplicity="1" Role="FromRole_assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD"/>
+                <End Type="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_CONTACT_DETAILSType" Multiplicity="*" Role="ToRole_assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD"/>
+            </Association>
+            <EntityContainer Name="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZSSM_IC_TYPESet" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_IC_TYPE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_SBPPSet" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_SBPP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMPLOYEE_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYEE_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMPLOYMENT_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMPLOYMENT_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMP_Children_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_Children_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMP_CHILDREN_DETAILSVH" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_CHILDREN_DETAILSVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMP_COMM_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_COMM_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMP_CONTACT_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_CONTACT_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMP_MARITAL_STATUSVH" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_MARITAL_STATUSVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_EMP_SPOUSE_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_SPOUSE_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSSM_SPOUSE_DETAILS" EntityType="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_SPOUSE_DETAILSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_7CED91AEF89241CF24A40B0214DC3864" Association="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_7CED91AEF89241CF24A40B0214DC3864" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSSM_EMP_SPOUSE_DETAILS" Role="FromRole_assoc_7CED91AEF89241CF24A40B0214DC3864"/>
+                    <End EntitySet="ZSSM_SPOUSE_DETAILS" Role="ToRole_assoc_7CED91AEF89241CF24A40B0214DC3864"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_5E1F6ED959A36B5713BEE9E739FBEF93" Association="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_5E1F6ED959A36B5713BEE9E739FBEF93" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSSM_EMPLOYEE_DETAILS" Role="FromRole_assoc_5E1F6ED959A36B5713BEE9E739FBEF93"/>
+                    <End EntitySet="ZSSM_EMPLOYMENT_DETAILS" Role="ToRole_assoc_5E1F6ED959A36B5713BEE9E739FBEF93"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_8EBFBD90D79773F71B9BB5AACF5C4730" Association="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_8EBFBD90D79773F71B9BB5AACF5C4730" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSSM_EMPLOYEE_DETAILS" Role="FromRole_assoc_8EBFBD90D79773F71B9BB5AACF5C4730"/>
+                    <End EntitySet="ZSSM_EMP_COMM_DETAILS" Role="ToRole_assoc_8EBFBD90D79773F71B9BB5AACF5C4730"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD" Association="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSSM_EMPLOYEE_DETAILS" Role="FromRole_assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD"/>
+                    <End EntitySet="ZSSM_EMP_CONTACT_DETAILS" Role="ToRole_assoc_0E045B02EECC13BBFDF6A8ADB16CA7BD"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_4687BABC4A4B4CA3A642122B1DECF6EB" Association="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_4687BABC4A4B4CA3A642122B1DECF6EB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSSM_EMPLOYEE_DETAILS" Role="FromRole_assoc_4687BABC4A4B4CA3A642122B1DECF6EB"/>
+                    <End EntitySet="ZSSM_EMP_SPOUSE_DETAILS" Role="ToRole_assoc_4687BABC4A4B4CA3A642122B1DECF6EB"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_91D1F8D1DCADE5AA645FEF3E95D494D1" Association="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.assoc_91D1F8D1DCADE5AA645FEF3E95D494D1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSSM_EMPLOYEE_DETAILS" Role="FromRole_assoc_91D1F8D1DCADE5AA645FEF3E95D494D1"/>
+                    <End EntitySet="ZSSM_EMP_Children_DETAILS" Role="ToRole_assoc_91D1F8D1DCADE5AA645FEF3E95D494D1"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSSM_EMP_EDUCATION_ALLOWANCE_SRV.ZSSM_EMP_EDUCATION_ALLOWANCE_SRV_Entities">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZSSM_EMP_EDUCATION_ALLOWANCE_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZSSM_EMP_EDUCATION_ALLOWANCE_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

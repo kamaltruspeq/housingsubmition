@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="5" labelSpanS="12" emptySpanXL="2"
+		emptySpanL="2" emptySpanM="2" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+		<f:content>
+			<core:Title/>
+			<Label text="Application Type"/>
+			<ComboBox>
+				<core:Item key="{key}" text="New"/>
+				<core:Item key="{key}" text="Moving/Transfer"/>
+			</ComboBox>
+			<Label text="Housing Group"/>
+			<ComboBox>
+				<core:Item key="{key}" text="JPA Housing"/>
+				<core:Item key="{key}" text="Bomba Housing"/>
+			</ComboBox>
+			<core:Title/>
+			<Label text="District"/>
+			<ComboBox>
+				<core:Item key="{key}" text="Brunei Muara"/>
+				<core:Item key="{key}" text="Temburong"/>
+			</ComboBox>
+			<Label text="Area"/>
+			<ComboBox>
+				<core:Item key="{key}" text="Jerudong"/>
+				<core:Item key="{key}" text="Temburong"/>
+			</ComboBox>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

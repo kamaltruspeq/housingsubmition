@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<f:SimpleForm title="Document">
+		<Table>
+			<columns>
+				<Column hAlign="Center">
+					<Text text="Document Name"/>
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Version"/>
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Date and Time"/>
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Action"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="Application Submission"/>
+						<Text text="1"/>
+						<Text text="03 August 2023 15:11:17"/>
+						<Button text="Print" type="Emphasized"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</f:SimpleForm>
+</core:FragmentDefinition>
